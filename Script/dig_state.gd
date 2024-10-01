@@ -1,8 +1,4 @@
-class_name State extends Node
-
-signal transitioned
-var character : CharacterBody2D
-
+class_name Dig extends State
 
 func enter():
 	pass
@@ -17,4 +13,5 @@ func state_physics_process(_delta : float):
 	pass
 
 func state_input(event : InputEvent):
-	pass
+		if event.is_action_pressed("ui_accept"):
+			transitioned.emit(self, "Pump")

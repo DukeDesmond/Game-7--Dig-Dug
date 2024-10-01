@@ -1,8 +1,4 @@
-class_name State extends Node
-
-signal transitioned
-var character : CharacterBody2D
-
+class_name Attack extends State
 
 func enter():
 	pass

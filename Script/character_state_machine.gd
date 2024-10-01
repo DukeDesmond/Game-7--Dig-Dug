@@ -1,6 +1,7 @@
 class_name CharacterStateMachine extends Node
 
 @export var initial_state : State
+@onready var character : CharacterBody2D = get_parent()
 
 var current_state : State
 var states : Dictionary = {}
@@ -10,6 +11,7 @@ func _ready() -> void:
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.transitioned.connect(on_child_transitioned)
+			child.character = character
 		else:
 			push_error('The child "' + child.name + '" is not a state for State Machine')
 	
