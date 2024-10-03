@@ -3,7 +3,7 @@ class_name AnimationHandler extends Node
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var player_character_body: CharacterBody2D = get_parent()
 
-var last_facing_direction := Vector2(0,-1)
+var last_facing_direction := Vector2(1,0)
 var idle : bool
 
 func _ready() -> void:

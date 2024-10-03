@@ -7,7 +7,8 @@ func exit():
 	pass
 	
 func state_process(_delta : float):
-	pass
+	if character.attacking == false:
+		transitioned.emit(self,"Pump")
 
 func state_physics_process(_delta : float):
 	pass

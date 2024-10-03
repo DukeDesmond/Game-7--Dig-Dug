@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://h8vmrx718ps"]
+[gd_scene load_steps=59 format=3 uid="uid://h8vmrx718ps"]
 
 [ext_resource type="Script" path="res://Script/animationHandler.gd" id="1_e35g6"]
 [ext_resource type="Texture2D" uid="uid://boo5mgqveyamn" path="res://Assets/Arcade - Dig Dug - General Sprites.png" id="1_fhoyv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Script/dig_state.gd" id="5_eykls"]
 [ext_resource type="Script" path="res://Script/pump_state.gd" id="6_qj4ht"]
 [ext_resource type="Script" path="res://Script/attack_state.gd" id="7_h55hb"]
+[ext_resource type="Script" path="res://Script/debug_label.gd" id="8_xndkw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwudt"]
 size = Vector2(16, 16)
@@ -1181,3 +1182,12 @@ script = ExtResource("7_h55hb")
 
 [node name="Dead" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("7_h55hb")
+
+[node name="DebugLabel" type="Label" parent="." node_paths=PackedStringArray("status")]
+offset_left = -19.0
+offset_top = -41.0
+offset_right = 121.0
+offset_bottom = -18.0
+text = "State:"
+script = ExtResource("8_xndkw")
+status = NodePath("../CharacterStateMachine")
