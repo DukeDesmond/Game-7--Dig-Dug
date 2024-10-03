@@ -115,7 +115,7 @@ advance_expression = "velocity"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bbbkr"]
 advance_mode = 2
-advance_expression = "pump"
+advance_expression = "pumping"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8267f"]
 switch_mode = 2
@@ -124,7 +124,7 @@ advance_expression = "attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dyob4"]
 advance_mode = 2
-advance_expression = "!pump"
+advance_expression = "!pumping"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sx2qd"]
 switch_mode = 2
@@ -1142,6 +1142,9 @@ frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mwudt")
+
+[node name="BikeMuzzle" type="Marker2D" parent="."]
+position = Vector2(16, 0)
 
 [node name="AnimationHandler" type="Node" parent="."]
 script = ExtResource("1_e35g6")

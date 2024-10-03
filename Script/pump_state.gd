@@ -2,8 +2,8 @@ class_name Pump extends State
 
 
 func enter():
-	character.pump = true
-	#spawn attack pump
+	character.pumping = true
+	character.pump_attack()
 	#if attack pump hits something
 	#go to attack state
 	pass
@@ -12,7 +12,7 @@ func exit():
 	pass
 	
 func state_process(_delta : float):
-	if character.pump == false:
+	if character.pumping == false:
 		transitioned.emit(self, "Dig")
 
 func state_physics_process(_delta : float):
