@@ -1,7 +1,7 @@
-[gd_scene load_steps=59 format=3 uid="uid://h8vmrx718ps"]
+[gd_scene load_steps=60 format=3 uid="uid://h8vmrx718ps"]
 
 [ext_resource type="Script" path="res://Script/animationHandler.gd" id="1_e35g6"]
-[ext_resource type="Texture2D" uid="uid://boo5mgqveyamn" path="res://Assets/Arcade - Dig Dug - General Sprites.png" id="1_fhoyv"]
+[ext_resource type="Texture2D" uid="uid://boo5mgqveyamn" path="res://Assets/Dig Dug/Arcade - Dig Dug - General Sprites.png" id="1_fhoyv"]
 [ext_resource type="Script" path="res://Script/player_character_body.gd" id="3_khpgc"]
 [ext_resource type="Script" path="res://Script/character_state_machine.gd" id="4_4qqgw"]
 [ext_resource type="Script" path="res://Script/dig_state.gd" id="5_eykls"]
@@ -9,8 +9,8 @@
 [ext_resource type="Script" path="res://Script/attack_state.gd" id="7_h55hb"]
 [ext_resource type="Script" path="res://Script/debug_label.gd" id="8_xndkw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwudt"]
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_xif0m"]
+radius = 6.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ya3sm"]
 animation = &"attack_down"
@@ -108,11 +108,11 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_afmu1"]
 advance_mode = 2
-advance_expression = "!velocity"
+advance_expression = "!moving"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4ow1s"]
 advance_mode = 2
-advance_expression = "velocity"
+advance_expression = "moving"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bbbkr"]
 advance_mode = 2
@@ -1132,6 +1132,9 @@ _data = {
 "walk_up": SubResource("Animation_vk3jm")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x3fu"]
+size = Vector2(16, 16)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("3_khpgc")
 
@@ -1142,7 +1145,8 @@ vframes = 25
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_mwudt")
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_xif0m")
 
 [node name="BikeMuzzle" type="Marker2D" parent="."]
 position = Vector2(16, 0)
@@ -1191,3 +1195,10 @@ offset_bottom = -18.0
 text = "State:"
 script = ExtResource("8_xndkw")
 status = NodePath("../CharacterStateMachine")
+
+[node name="DigArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DigArea"]
+shape = SubResource("RectangleShape2D_0x3fu")
+
+[connection signal="body_entered" from="DigArea" to="." method="_on_dig_area_body_entered"]

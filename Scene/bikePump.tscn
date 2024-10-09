@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://cemt6jyw5fjb6"]
 
 [ext_resource type="Script" path="res://Script/bike_pump.gd" id="1_m4gcw"]
-[ext_resource type="Texture2D" uid="uid://boo5mgqveyamn" path="res://Assets/Arcade - Dig Dug - General Sprites.png" id="1_wr8g5"]
+[ext_resource type="Texture2D" uid="uid://boo5mgqveyamn" path="res://Assets/Dig Dug/Arcade - Dig Dug - General Sprites.png" id="1_wr8g5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujmar"]
-size = Vector2(16, 4)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ho5os"]
+radius = 2.0
 
 [sub_resource type="Animation" id="Animation_awbvb"]
 length = 0.001
@@ -251,7 +251,7 @@ tracks/19/keys = {
 
 [sub_resource type="Animation" id="Animation_666f3"]
 resource_name = "down"
-length = 0.2
+length = 0.3
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -496,7 +496,7 @@ tracks/19/keys = {
 
 [sub_resource type="Animation" id="Animation_k8du1"]
 resource_name = "left"
-length = 0.2
+length = 0.3
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -717,7 +717,7 @@ tracks/17/keys = {
 
 [sub_resource type="Animation" id="Animation_7k48u"]
 resource_name = "right"
-length = 0.2
+length = 0.3
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -950,7 +950,7 @@ tracks/18/keys = {
 
 [sub_resource type="Animation" id="Animation_bwlby"]
 resource_name = "up"
-length = 0.2
+length = 0.3
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1213,7 +1213,7 @@ frame = 48
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
-shape = SubResource("RectangleShape2D_ujmar")
+shape = SubResource("CircleShape2D_ho5os")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boo5mgqveyamn"
-path="res://.godot/imported/Arcade - Dig Dug - General Sprites.png-a268224db5d003e32fcf1025601d104b.ctex"
+uid="uid://c3mwkde4i0cdx"
+path="res://.godot/imported/world_tileset.png-1d96c6979cd4e122a2ce3c18b011c3de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Arcade - Dig Dug - General Sprites.png"
-dest_files=["res://.godot/imported/Arcade - Dig Dug - General Sprites.png-a268224db5d003e32fcf1025601d104b.ctex"]
+source_file="res://Assets/Brackeys Platformer Assets/sprites/world_tileset.png"
+dest_files=["res://.godot/imported/world_tileset.png-1d96c6979cd4e122a2ce3c18b011c3de.ctex"]
 
 [params]
 

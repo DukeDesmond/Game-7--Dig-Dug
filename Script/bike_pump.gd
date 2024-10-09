@@ -27,8 +27,14 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	
 	if body.is_in_group("Enemy"):
 		pass
+	else:
+		animation_player.stop()
+		miss.emit(true)
+		queue_free()
+
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	miss.emit(true)

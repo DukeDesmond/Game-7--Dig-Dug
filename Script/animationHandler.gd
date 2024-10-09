@@ -12,10 +12,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time move_toward(velocity, 0, SPEED)since the previous frame.
 func _physics_process(_delta: float) -> void:
 	
-	idle = !player_character_body.velocity
+	idle = !player_character_body.direction
 	
 	if !idle:
-		last_facing_direction = player_character_body.velocity.normalized()
+		last_facing_direction = player_character_body.direction
 	
 	animation_tree.set("parameters/Idle/blend_position",last_facing_direction)
 	animation_tree.set("parameters/Walk/blend_position",last_facing_direction)

@@ -1,16 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgw6qqfri0ti4"]
+[gd_scene load_steps=4 format=3 uid="uid://cgw6qqfri0ti4"]
 
+[ext_resource type="PackedScene" uid="uid://cyoibkmu66qa1" path="res://Scene/level.tscn" id="1_glgk1"]
 [ext_resource type="PackedScene" uid="uid://h8vmrx718ps" path="res://Scene/player.tscn" id="1_tasp8"]
-[ext_resource type="Texture2D" uid="uid://c6lnix800icc5" path="res://icon.svg" id="2_ujjrj"]
+[ext_resource type="PackedScene" uid="uid://daydejtmqev5n" path="res://Scene/pookas.tscn" id="3_kxjir"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_tasp8")]
-position = Vector2(598, 311)
+position = Vector2(8, -8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(601, 384)
-texture = ExtResource("2_ujjrj")
+[node name="Level" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_glgk1")]
+player = NodePath("../Player")
+
+[node name="Pookas" parent="." instance=ExtResource("3_kxjir")]
+position = Vector2(105, 72)
